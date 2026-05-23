@@ -249,5 +249,114 @@ if (window.matchMedia('(max-width: 768px)').matches && heroDrone) {
   heroDrone.style.transform = '';
 }
 
+/* ---- Fetch dynamic content from CMS ---- */
+fetch('/api/content')
+  .then(res => res.json())
+  .then(data => {
+    if (data.general) {
+      document.getElementById('h-logo-text').textContent = data.general.logo_text || '';
+      document.getElementById('h-logo-accent').textContent = data.general.logo_accent || '';
+      
+      if (data.general.contact_phone) {
+        const phone = data.general.contact_phone;
+        const footerPhone = document.getElementById('footer-phone');
+        if (footerPhone) footerPhone.textContent = '📱 ' + phone;
+        
+        const waLink = document.getElementById('wa-link');
+        if (waLink) waLink.href = 'https://wa.me/' + phone.replace(/\D/g, '');
+      }
+      
+      if (data.general.contact_email) {
+        const email = data.general.contact_email;
+        const footerEmail = document.getElementById('footer-email');
+        if (footerEmail) footerEmail.textContent = '📧 ' + email;
+        
+        const emailLink = document.getElementById('email-link');
+        if (emailLink) emailLink.href = 'mailto:' + email;
+      }
+    }
+    if (data.hero) {
+      document.getElementById('h-badge').textContent = data.hero.badge || '';
+      document.getElementById('h-line1').textContent = data.hero.title_line1 || '';
+      document.getElementById('h-line2').textContent = data.hero.title_line2 || '';
+      document.getElementById('h-glow').textContent = data.hero.title_glow || '';
+      document.getElementById('h-sub').innerHTML = data.hero.subtitle || '';
+      if (data.hero.image) {
+        document.getElementById('hero-drone').src = data.hero.image;
+      }
+    }
+    if (data.services) {
+      const sGrid = document.getElementById('dynamic-services-grid');
+      let html = '';
+      data.services.forEach(s => {
+        const badgeHtml = s.badge ? `<div class="service-badge">${s.badge}</div>` : '';
+        const featHtml = s.features.map(f => `<li>${f}</li>`).join('');
+        html += `
+          <div class="service-card" data-category="${s.id}" id="service-${s.id}">
+            <div class="service-icon">${s.icon}</div>
+            ${badgeHtml}
+            <h3>${s.title}</h3>
+            <p>${s.description}</p>
+            <ul class="service-list">${featHtml}</ul>
+            <a href="#estimate" class="service-cta">Order Now →</a>
+          </div>
+        `;
+      });
+      sGrid.innerHTML = html;
+      
+      // Re-bind service card click events
+      document.querySelectorAll('.service-card').forEach(card => {
+        card.addEventListener('click', (e) => {
+          if (e.target.tagName === 'A') return;
+          const cat = card.dataset.category;
+          if (cat && catEl) {
+            catEl.value = cat;
+            updateSummary();
+            document.getElementById('estimate').scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+        card.style.cursor = 'pointer';
+        revealObserver.observe(card);
+      });
+    }
+    
+    if (data.projects) {
+      const pGrid = document.getElementById('dynamic-projects-grid');
+      let html = '';
+      data.projects.forEach(p => {
+        const imgStyle = p.image ? `background: url('${p.image}') center/cover;` : `background: ${p.gradient};`;
+        const specsHtml = p.specs.map(sp => `<span>${sp}</span>`).join('');
+        
+        let overlayText = "";
+        if (p.tag === "custom") overlayText = "Custom Build";
+        if (p.tag === "event") overlayText = "Event Shoot";
+        if (p.tag === "race") overlayText = "Race Build";
+        if (p.tag === "pnp") overlayText = "PNP Build";
+
+        html += `
+          <div class="project-card" data-tag="${p.tag}" id="${p.id}">
+            <div class="project-img" style="${imgStyle}">
+              ${p.image ? '' : `<div class="proj-drone-art">${p.art_icon}<br/><small>${p.art_text}</small></div>`}
+              <div class="project-overlay">
+                <span class="proj-tag">${overlayText}</span>
+              </div>
+            </div>
+            <div class="project-info">
+              <h4>${p.title}</h4>
+              <p>${p.description}</p>
+              <div class="proj-specs">${specsHtml}</div>
+            </div>
+          </div>
+        `;
+      });
+      pGrid.innerHTML = html;
+      
+      // Re-bind filter Logic?
+      // Re-observe for reveal
+      document.querySelectorAll('.project-card').forEach(c => revealObserver.observe(c));
+    }
+  })
+  .catch(err => console.error("Error fetching content", err));
+
 console.log('%c🚁 Sky High FPV', 'font-size:24px;color:#00d4ff;font-weight:bold;');
 console.log('%cBuilt with passion for the FPV community.', 'color:#94a3b8;font-size:13px;');

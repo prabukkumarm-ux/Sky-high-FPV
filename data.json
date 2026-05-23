@@ -1,0 +1,204 @@
+{
+  "general": {
+    "logo_text": "SKY HIGH",
+    "logo_accent": "FPV",
+    "contact_email": "skyhighfpv@gmail.com",
+    "contact_phone": "+91 98400 39278"
+  },
+  "hero": {
+    "badge": "\ud83d\ude81 FPV Specialists",
+    "title_line1": "FLY BEYOND",
+    "title_line2": "THE",
+    "title_glow": "LIMIT",
+    "subtitle": "Custom FPV Drones. Cinematic Shoots. Race Machines.<br/>Built for those who refuse to be grounded.",
+    "stats": [
+      {
+        "num": "120+",
+        "label": "Drones Built"
+      },
+      {
+        "num": "50+",
+        "label": "Events Covered"
+      },
+      {
+        "num": "5\u2605",
+        "label": "Client Rating"
+      }
+    ],
+    "image": "hero_drone.png"
+  },
+  "services": [
+    {
+      "id": "custom",
+      "icon": "\u2699\ufe0f",
+      "badge": "Most Popular",
+      "title": "Custom Build",
+      "description": "Full custom FPV builds tailored exactly to your specifications \u2014 frame, motors, VTX, flight controller, and tuning.",
+      "features": [
+        "Frame selection & design",
+        "Component sourcing & spec",
+        "Full wiring & soldering",
+        "Betaflight / INAV tuning",
+        "Test flights & warranty"
+      ]
+    },
+    {
+      "id": "rtf",
+      "icon": "\ud83d\ude80",
+      "badge": "",
+      "title": "RTF (Ready to Fly)",
+      "description": "Plug-and-play drones that are fully assembled, tuned, and ready to rip straight out of the box.",
+      "features": [
+        "Pre-assembled & tested",
+        "Radio & goggles included option",
+        "Beginner to pro variants",
+        "Setup & binding support"
+      ]
+    },
+    {
+      "id": "pnp",
+      "icon": "\ud83d\udd27",
+      "badge": "",
+      "title": "PNP (Plug & Play)",
+      "description": "Assembled drones minus the receiver \u2014 perfect for pilots who already have their preferred radio system.",
+      "features": [
+        "Electronics pre-installed",
+        "Receiver slot ready",
+        "Fully tuned firmware",
+        "Works with any RX protocol"
+      ]
+    },
+    {
+      "id": "event",
+      "icon": "\ud83c\udfac",
+      "badge": "",
+      "title": "Event Shoots",
+      "description": "Cinematic FPV aerial coverage for weddings, sports, real estate, music videos, and corporate events.",
+      "features": [
+        "4K / 6K cinematic footage",
+        "Weddings & engagements",
+        "Real estate aerial tours",
+        "Sports & racing events",
+        "Corporate & brand shoots"
+      ]
+    },
+    {
+      "id": "race",
+      "icon": "\ud83c\udfc1",
+      "badge": "",
+      "title": "Race Builds",
+      "description": "High-speed competition drones optimized for FPV racing leagues. Pure speed, minimal weight.",
+      "features": [
+        "Sub-250g builds available",
+        "High-KV motor setup",
+        "Race-ready tuning",
+        "Track support"
+      ]
+    },
+    {
+      "id": "repair",
+      "icon": "\ud83d\udee0\ufe0f",
+      "badge": "",
+      "title": "Repair & Upgrade",
+      "description": "Crashed your quad? We'll fix it. Want to push performance? We'll upgrade every component for peak performance.",
+      "features": [
+        "Crash damage assessment",
+        "Motor & ESC replacement",
+        "Camera & VTX upgrade",
+        "Firmware reflash"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj-1",
+      "tag": "custom",
+      "gradient": "linear-gradient(135deg,#0f172a,#1e3a5f,#0ea5e9)",
+      "art_icon": "\u2699\ufe0f",
+      "art_text": "5\" Freestyle Build",
+      "title": "Titan 5\" Freestyle",
+      "description": "Full carbon build with 2306 2450KV motors, F7 stack, DJI O3 air unit.",
+      "specs": [
+        "5\" Props",
+        "F7 FC",
+        "DJI O3"
+      ],
+      "image": ""
+    },
+    {
+      "id": "proj-2",
+      "tag": "event",
+      "gradient": "linear-gradient(135deg,#0f172a,#4c1d95,#8b5cf6)",
+      "art_icon": "\ud83c\udfac",
+      "art_text": "Wedding Cinematic",
+      "title": "Royal Wedding Aerial",
+      "description": "4K cinematic FPV coverage of a luxury beachside wedding \u2014 smooth and breathtaking.",
+      "specs": [
+        "4K60fps",
+        "Cinematic",
+        "Beach"
+      ],
+      "image": ""
+    },
+    {
+      "id": "proj-3",
+      "tag": "race",
+      "gradient": "linear-gradient(135deg,#0f172a,#7f1d1d,#ef4444)",
+      "art_icon": "\ud83c\udfc1",
+      "art_text": "Race Quad",
+      "title": "Specter Race 4\"",
+      "description": "Lightweight 4\" toothpick racer, 2750KV, 35A 4-in-1 ESC, pushing 120mph+.",
+      "specs": [
+        "4\" Props",
+        "Sub 250g",
+        "120mph+"
+      ],
+      "image": ""
+    },
+    {
+      "id": "proj-4",
+      "tag": "pnp",
+      "gradient": "linear-gradient(135deg,#0f172a,#064e3b,#10b981)",
+      "art_icon": "\ud83d\udd27",
+      "art_text": "PNP Kit",
+      "title": "Viper PNP Kit",
+      "description": "Fully assembled PNP quad with all electronics, awaiting your preferred receiver.",
+      "specs": [
+        "PNP",
+        "Any RX",
+        "Tuned"
+      ],
+      "image": ""
+    },
+    {
+      "id": "proj-5",
+      "tag": "event",
+      "gradient": "linear-gradient(135deg,#0f172a,#78350f,#f59e0b)",
+      "art_icon": "\ud83c\udfdf\ufe0f",
+      "art_text": "Sports Event",
+      "title": "Stadium Sports Coverage",
+      "description": "High-energy FPV coverage of a local football tournament \u2014 chasing the action frame by frame.",
+      "specs": [
+        "Sports",
+        "High Speed",
+        "6K"
+      ],
+      "image": ""
+    },
+    {
+      "id": "proj-6",
+      "tag": "custom",
+      "gradient": "linear-gradient(135deg,#0f172a,#1e1b4b,#6366f1)",
+      "art_icon": "\ud83c\udf06",
+      "art_text": "Long Range",
+      "title": "Voyager LR 7\"",
+      "description": "Long range exploration build with ELRS, GPS rescue, and 30+ minute flight time.",
+      "specs": [
+        "7\" Props",
+        "ELRS",
+        "GPS"
+      ],
+      "image": ""
+    }
+  ]
+}

@@ -15,9 +15,9 @@
   <!-- ========== NAV ========== -->
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
-      <a href="#home" class="logo">
+      <a href="#home" class="logo" id="header-logo">
         <span class="logo-icon">✦</span>
-        SKY HIGH <span class="logo-accent">FPV</span>
+        <span id="h-logo-text">SKY HIGH</span> <span class="logo-accent" id="h-logo-accent">FPV</span>
       </a>
       <ul class="nav-links" id="nav-links">
         <li><a href="#home">Home</a></li>
@@ -38,12 +38,12 @@
     <div class="hero-bg-grid"></div>
     <div class="hero-particles" id="particles"></div>
     <div class="hero-content">
-      <div class="hero-badge">🚁 FPV Specialists</div>
+      <div class="hero-badge" id="h-badge">🚁 FPV Specialists</div>
       <h1 class="hero-title">
-        <span class="line1">FLY BEYOND</span>
-        <span class="line2">THE <span class="glow-text">LIMIT</span></span>
+        <span class="line1" id="h-line1">FLY BEYOND</span>
+        <span class="line2"><span id="h-line2">THE</span> <span class="glow-text" id="h-glow">LIMIT</span></span>
       </h1>
-      <p class="hero-sub">Custom FPV Drones. Cinematic Shoots. Race Machines.<br/>Built for those who refuse to be grounded.</p>
+      <p class="hero-sub" id="h-sub">Custom FPV Drones. Cinematic Shoots. Race Machines.<br/>Built for those who refuse to be grounded.</p>
       <div class="hero-cta">
         <a href="#estimate" class="btn-primary" id="hero-cta-quote">Get Free Estimate</a>
         <a href="#projects" class="btn-ghost" id="hero-cta-projects">View Projects</a>
@@ -73,89 +73,8 @@
       <div class="section-tag">What We Do</div>
       <h2 class="section-title">Our <span class="accent">Categories</span></h2>
       <p class="section-sub">From raw frames to full cinematic productions — we cover every corner of the FPV world.</p>
-      <div class="services-grid">
-
-        <div class="service-card" data-category="custom" id="service-custom">
-          <div class="service-icon">⚙️</div>
-          <div class="service-badge">Most Popular</div>
-          <h3>Custom Build</h3>
-          <p>Full custom FPV builds tailored exactly to your specifications — frame, motors, VTX, flight controller, and tuning.</p>
-          <ul class="service-list">
-            <li>Frame selection & design</li>
-            <li>Component sourcing & spec</li>
-            <li>Full wiring & soldering</li>
-            <li>Betaflight / INAV tuning</li>
-            <li>Test flights & warranty</li>
-          </ul>
-          <a href="#estimate" class="service-cta">Request Build →</a>
-        </div>
-
-        <div class="service-card" data-category="rtf" id="service-rtf">
-          <div class="service-icon">🚀</div>
-          <h3>RTF (Ready to Fly)</h3>
-          <p>Plug-and-play drones that are fully assembled, tuned, and ready to rip straight out of the box.</p>
-          <ul class="service-list">
-            <li>Pre-assembled & tested</li>
-            <li>Radio & goggles included option</li>
-            <li>Beginner to pro variants</li>
-            <li>Setup & binding support</li>
-          </ul>
-          <a href="#estimate" class="service-cta">Order RTF →</a>
-        </div>
-
-        <div class="service-card" data-category="pnp" id="service-pnp">
-          <div class="service-icon">🔧</div>
-          <h3>PNP (Plug & Play)</h3>
-          <p>Assembled drones minus the receiver — perfect for pilots who already have their preferred radio system.</p>
-          <ul class="service-list">
-            <li>Electronics pre-installed</li>
-            <li>Receiver slot ready</li>
-            <li>Fully tuned firmware</li>
-            <li>Works with any RX protocol</li>
-          </ul>
-          <a href="#estimate" class="service-cta">Order PNP →</a>
-        </div>
-
-        <div class="service-card" data-category="event" id="service-event">
-          <div class="service-icon">🎬</div>
-          <h3>Event Shoots</h3>
-          <p>Cinematic FPV aerial coverage for weddings, sports, real estate, music videos, and corporate events.</p>
-          <ul class="service-list">
-            <li>4K / 6K cinematic footage</li>
-            <li>Weddings & engagements</li>
-            <li>Real estate aerial tours</li>
-            <li>Sports & racing events</li>
-            <li>Corporate & brand shoots</li>
-          </ul>
-          <a href="#estimate" class="service-cta">Book Shoot →</a>
-        </div>
-
-        <div class="service-card" data-category="race" id="service-race">
-          <div class="service-icon">🏁</div>
-          <h3>Race Builds</h3>
-          <p>High-speed competition drones optimized for FPV racing leagues. Pure speed, minimal weight.</p>
-          <ul class="service-list">
-            <li>Sub-250g builds available</li>
-            <li>High-KV motor setup</li>
-            <li>Race-ready tuning</li>
-            <li>Track support</li>
-          </ul>
-          <a href="#estimate" class="service-cta">Build Race Quad →</a>
-        </div>
-
-        <div class="service-card" data-category="repair" id="service-repair">
-          <div class="service-icon">🛠️</div>
-          <h3>Repair & Upgrade</h3>
-          <p>Crashed your quad? We'll fix it. Want to push performance? We'll upgrade every component for peak performance.</p>
-          <ul class="service-list">
-            <li>Crash damage assessment</li>
-            <li>Motor & ESC replacement</li>
-            <li>Camera & VTX upgrade</li>
-            <li>Firmware reflash</li>
-          </ul>
-          <a href="#estimate" class="service-cta">Get Repair Quote →</a>
-        </div>
-
+      <div class="services-grid" id="dynamic-services-grid">
+        <!-- Services will be injected here via JS -->
       </div>
     </div>
   </section>
@@ -175,104 +94,8 @@
         <button class="filter-btn" data-filter="pnp" id="filter-pnp">PNP / RTF</button>
       </div>
 
-      <div class="projects-grid" id="projects-grid">
-
-        <div class="project-card" data-tag="custom" id="proj-1">
-          <div class="project-img" style="background: linear-gradient(135deg,#0f172a,#1e3a5f,#0ea5e9);">
-            <div class="proj-drone-art">⚙️<br/><small>5" Freestyle Build</small></div>
-            <div class="project-overlay">
-              <span class="proj-tag">Custom Build</span>
-            </div>
-          </div>
-          <div class="project-info">
-            <h4>Titan 5" Freestyle</h4>
-            <p>Full carbon build with 2306 2450KV motors, F7 stack, DJI O3 air unit.</p>
-            <div class="proj-specs">
-              <span>5" Props</span><span>F7 FC</span><span>DJI O3</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" data-tag="event" id="proj-2">
-          <div class="project-img" style="background: linear-gradient(135deg,#0f172a,#4c1d95,#8b5cf6);">
-            <div class="proj-drone-art">🎬<br/><small>Wedding Cinematic</small></div>
-            <div class="project-overlay">
-              <span class="proj-tag">Event Shoot</span>
-            </div>
-          </div>
-          <div class="project-info">
-            <h4>Royal Wedding Aerial</h4>
-            <p>4K cinematic FPV coverage of a luxury beachside wedding — smooth and breathtaking.</p>
-            <div class="proj-specs">
-              <span>4K60fps</span><span>Cinematic</span><span>Beach</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" data-tag="race" id="proj-3">
-          <div class="project-img" style="background: linear-gradient(135deg,#0f172a,#7f1d1d,#ef4444);">
-            <div class="proj-drone-art">🏁<br/><small>Race Quad</small></div>
-            <div class="project-overlay">
-              <span class="proj-tag">Race Build</span>
-            </div>
-          </div>
-          <div class="project-info">
-            <h4>Specter Race 4"</h4>
-            <p>Lightweight 4" toothpick racer, 2750KV, 35A 4-in-1 ESC, pushing 120mph+.</p>
-            <div class="proj-specs">
-              <span>4" Props</span><span>Sub 250g</span><span>120mph+</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" data-tag="pnp" id="proj-4">
-          <div class="project-img" style="background: linear-gradient(135deg,#0f172a,#064e3b,#10b981);">
-            <div class="proj-drone-art">🔧<br/><small>PNP Kit</small></div>
-            <div class="project-overlay">
-              <span class="proj-tag">PNP Build</span>
-            </div>
-          </div>
-          <div class="project-info">
-            <h4>Viper PNP Kit</h4>
-            <p>Fully assembled PNP quad with all electronics, awaiting your preferred receiver.</p>
-            <div class="proj-specs">
-              <span>PNP</span><span>Any RX</span><span>Tuned</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" data-tag="event" id="proj-5">
-          <div class="project-img" style="background: linear-gradient(135deg,#0f172a,#78350f,#f59e0b);">
-            <div class="proj-drone-art">🏟️<br/><small>Sports Event</small></div>
-            <div class="project-overlay">
-              <span class="proj-tag">Event Shoot</span>
-            </div>
-          </div>
-          <div class="project-info">
-            <h4>Stadium Sports Coverage</h4>
-            <p>High-energy FPV coverage of a local football tournament — chasing the action frame by frame.</p>
-            <div class="proj-specs">
-              <span>Sports</span><span>High Speed</span><span>6K</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="project-card" data-tag="custom" id="proj-6">
-          <div class="project-img" style="background: linear-gradient(135deg,#0f172a,#1e1b4b,#6366f1);">
-            <div class="proj-drone-art">🌆<br/><small>Long Range</small></div>
-            <div class="project-overlay">
-              <span class="proj-tag">Custom Build</span>
-            </div>
-          </div>
-          <div class="project-info">
-            <h4>Voyager LR 7"</h4>
-            <p>Long range exploration build with ELRS, GPS rescue, and 30+ minute flight time.</p>
-            <div class="proj-specs">
-              <span>7" Props</span><span>ELRS</span><span>GPS</span>
-            </div>
-          </div>
-        </div>
-
+      <div class="projects-grid" id="dynamic-projects-grid">
+        <!-- Projects injected via JS -->
       </div>
     </div>
   </section>
@@ -547,8 +370,8 @@
         </div>
         <div class="footer-contact-info">
           <h5>Contact</h5>
-          <p>📧 skyhighfpv@gmail.com</p>
-          <p>📱 +91 99999 99999</p>
+          <p id="footer-email">📧 skyhighfpv@gmail.com</p>
+          <p id="footer-phone">📱 +91 99999 99999</p>
           <p>📍 India</p>
         </div>
       </div>
@@ -558,6 +381,6 @@
     </div>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=2"></script>
 </body>
 </html>
